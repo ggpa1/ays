@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AYS</title>
+	
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/jgrowl.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/hint.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.formstyler.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<!-- подключаемые скрипты jQuery -->
+	<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery-ui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.datepicker.extension.range.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/swiper.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.formstyler.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.mask.min.js" charset="utf-8"></script>
+
+	<script type="text/javascript" src="js/jquery.arcticmodal-0.3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/jquery.arcticmodal-0.3.css" type="text/css" />
+	<link rel="stylesheet" href="css/themes/simple.css" type="text/css" />
+	
+	<script src="js/lightgallery-all.min.js"></script>
+	<link href="css/lightgallery.css" rel="stylesheet">
+	
+	<!-- индивидуальные скрипты -->
+	<script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<!-- скрипт для пиксельной верстки
+<script type="text/javascript" src="js/crosspixel_debug.js"></script> -->
+
+<div style="display: none;">
+    <div class="box-modal" id="registerModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Регистрация</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="Фамилия" />
+        	<input type="text" placeholder="Имя" />
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Придумайте пароль" />
+        	<input type="text" placeholder="Повторите пароль" />
+        </div>
+        <a href="#" class="recovery_href">Забыли пароль?</a>
+        <div class="clear"></div>
+        
+        <button class="red">Войти</button>
+        
+        <div class="line_div">
+        	<span>или</span>
+        </div>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <p>Регистрируясь, вы автоматически принимаете нашу политику конфиденциальности и пользовательское соглашение</p>
+    </div>
+</div>
+
+<div style="display: none;">
+    <div class="box-modal" id="loginModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Личный кабинет</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Пароль" />
+        </div>
+        
+        <button class="red">Войти</button>
+        
+        <p>Вход через соцсети</p>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <a class="register" href="#" onclick="$('#loginModal').arcticmodal('close'); $('#registerModal').arcticmodal(); return false;">ПРОЙТИ РЕГИСТРАЦИЮ</a>
+    </div>
+</div>
+
+<div class="fwrapper">
+	<div class="fcontent">
+
+<div class="wrapper header">
+	<header class="container">
+		<div class="mobile_ham_container">
+			<div class="mobile_ham">
+  				<span></span>
+  				<span></span>
+  				<span></span>
+			</div>
+		</div>
+	
+		<a href="/"><img class="logo" src="img/header_logo.png" alt="" /></a>
+		<ul class="main_nav">
+			<li>
+				<a href="sklon.html">Склоны</a>
+				<ul>
+					<li><a href="sklon.html">Роза Хутор</a></li>
+					<li><a href="sklon.html">Шерегеш</a></li>
+				</ul>
+			</li>
+			<li><a href="choice.html">Гостиницы</a></li>
+			<li><a href="#">Туры</a></li>
+			<li><a href="#">Мероприятия</a></li>
+		</ul>
+		
+		<p><img src="img/phone_icon.png" alt="" /> <span>8 800 500 04 89</span></p>
+		<button onclick="$('#loginModal').arcticmodal();"><span>Войти</span></button>
+	</header>
+</div>
+
+<div class="wrapper events">
+	<section class="container">
+		<div class="slide_content" style="background-image: url('../img/tour1_background.jpg');">
+		</div>
+		
+		<div class="lined_content">
+		
+			<ul class="events_nav margined">
+				<li class="active"><a href="#">Описание</a></li>
+				<li><a href="#">Программа</a></li>
+				<li><a href="#">Даты и время</a></li>
+				<li><a href="#">Стоимость</a></li>
+			</ul>
+		
+			<div class="tab_content tab1">
+				<div class="left_part">
+					<div class="program_block">
+						<h5>Такого крутого лета у тебя еще не было! <span>ОСОБЕННО ПО ТАКОЙ СМЕШНОЙ ЦЕНЕ!</span></h5>
+						<p>MAX-BUS - АВТОБУС №1 В ШЕРЕГЕШ! Комфортабельный, надежный и самый веселый! Всегда с низкими ценами в гостиницы Ays & Laska! А еще в каждом туре ты обязательно найдешь новых друзей, ведь это Max-Bus!</p>
+						<img src="img/tours/photos/about.jpg" alt="" />
+					</div>
+				
+					<div class="program_block">
+						<h5>ЭТО НОВЫЙ ФОРМАТ ЛЕТА!</h5>
+						<p>Это MAX-BUS и ТЫ ДОЛЖЕН ЕХАТЬ, потому что это будут настоящие и невероятные приключения!!! Горы, Солнце, бассейн, велосипеды, шашлыки, салют, баня, коктейли, футбол, прогулки на лошадях, квесты в горах, пинг-понг, бир-понг:), мокрые майки, песни под гитару, ночной костер, сжигание чучела, постоянная дискотека и это только начало!</p>
+					</div>							
+				</div>
+			
+				<div class="right_part">				
+					<button class="blue_button">Хочу поехать!</button>
+				
+					<p>Присоединяйся</p>
+					<button class="vk_big_button">Группа мероприятия</button>
+					<p>Отчеты с прошедших MAX BUS:</p>
+					<button class="black_white_button">Посмотреть</button>
+				</div>
+			
+				<div class="clear"></div>			
+			</div>
+			
+			<div class="tab_content tab2">
+				<div class="left_part">
+					<div class="program_block">
+						<p class="bolder"><img src="img/blue_arrow.png" alt="" /> <span>23 Апреля, Синьбота :)</span></p>
+						<span><span class="blue">07:00</span> – Въезжаем в Геш, и начинается отрыв :)</span>
+						<span><span class="blue">08:00</span> – Приехали! Камооон!</span>
+						<span><span class="blue">08:30</span> – Душ, еда, секс, снаряга, егерь!</span>
+						<span><span class="blue">10:00</span> – Обязательный подъем в гору!	</span>
+						<span><span class="blue">11:00-16:00</span> – Катаемся, радуемся, тусим и делаем массовую фотосессию MAX-BUS!</span>
+						<span><span class="blue">20:30</span> – Max-Bus pre-party в GRELKA или CLEVER с ЛОТЕРЕЕЙ c мега-призами и горячительным!</span>
+						<span><span class="blue">22:30</span> – Идем в AYS-BUNKER делать "Ой, что вчера было в клубе!" :)</span>
+						<span><span class="blue">05:00</span> – Сон, флирт, пьем, флирт, пьем, секс:)</span>
+					</div>
+				
+					<div class="program_block">
+						<p class="bolder"><img src="img/blue_arrow.png" alt="" /> <span>24 Апреля, Воскресенье</span></p>
+						<span>Как проснемся - МЕСИМ СНЕГ и отбываем в 17.00. По дороге договариваемся про афтапати в ПРАВДЕ! НЕ ПЬЕМ!:)</span>
+					</div>							
+				</div>
+			
+				<div class="right_part">				
+					<button class="blue_button">Хочу поехать!</button>
+				
+					<p>Присоединяйся</p>
+					<button class="vk_big_button">Группа мероприятия</button>
+					<p>Отчеты с прошедших MAX BUS:</p>
+					<button class="black_white_button">Посмотреть</button>
+				</div>
+			
+				<div class="clear"></div>
+			</div>
+			
+			<div class="tab_content tab3">
+				<div class="left_part">
+					<div class="program_block">
+						<p class="bolder"><img src="img/blue_arrow.png" alt="" /> <span>Выезд в Шерегеш – 28 февраля (воскр.):</span></p>
+						<span><span class="blue">08:00</span> от гостиницы "Золотая Долина" - Ильича 10 (Академгородок)</span>
+						<span><span class="blue">09:00</span> от ст. метро Октябрьская - Кирова 44</span>
+					</div>
+				
+					<div class="program_block">
+						<p class="bolder"><img src="img/blue_arrow.png" alt="" /> <span>Выезд в Новосибирск – 2 марта (среда):</span></p>
+						<span><span class="blue">18:00</span> от гостиницы AYS</span>
+						<span><span class="blue">18:00</span> от гостиницы PROFILAK</span>
+						<span><span class="blue">18:15</span> от магазина "Кукуруза"</span>
+					</div>							
+				</div>
+			
+				<div class="right_part">				
+					<button class="blue_button">Хочу поехать!</button>
+				
+					<p>Присоединяйся</p>
+					<button class="vk_big_button">Группа мероприятия</button>
+					<p>Отчеты с прошедших MAX BUS:</p>
+					<button class="black_white_button">Посмотреть</button>
+				</div>
+			
+				<div class="clear"></div>
+			</div>
+			
+			<div class="tab_content tab4">
+				<div class="left_part">
+					<div class="program_block">
+						<p class="bolder"><img src="img/blue_arrow.png" alt="" /> <span>Эконом (6-местный).</span></p>
+						<span><span class="blue">Цена с человека:</span> 3800 р.</span> <br>
+					
+						<span><span class="blue">В стоимость входит:</span> проезд на комфорт-автобусе Нск – Геш – Нск, два дня проживания в гостинице ПРОФИЛАК + бесплатный вход на вечеринку в клуб AYS-Bunker!</span>
+					</div>
+				
+					<div class="program_block">
+						<p class="bolder"><img src="img/blue_arrow.png" alt="" /> <span>Эконом (4-местный).</span></p>
+						<span><span class="blue">Цена с человека:</span> 4200 р.</span> <br>
+					
+						<span><span class="blue">В стоимость входит:</span> проезд на комфорт-автобусе Нск – Геш – Нск, два дня проживания в гостинице ПРОФИЛАК + бесплатный вход на вечеринку в клуб AYS-Bunker!</span>
+					</div>
+				
+					<p class="margined">Есть 2х-местные номера.</p>
+					<p>Спрашивайте по тел. 8-913-900-1173</p>								
+				</div>
+			
+				<div class="right_part">				
+					<button class="blue_button">Хочу поехать!</button>
+				
+					<p>Присоединяйся</p>
+					<button class="vk_big_button">Группа мероприятия</button>
+					<p>Отчеты с прошедших MAX BUS:</p>
+					<button class="black_white_button">Посмотреть</button>
+				</div>
+			
+				<div class="clear"></div>
+			</div>
+		</div>	
+	</section>
+</div>
+
+	</div>
+	
+	<div class="wrapper footer">
+		<footer>
+			<div class="row">
+				<div class="container">
+					<div class="footer_block">
+						<a href="#">Склоны</a>
+						<a href="#">Гостиницы</a>
+						<a href="#">Туры</a>
+						<a href="#">Мероприятия</a>
+					</div>
+			
+					<div class="footer_block">
+						<a href="#">Забронировать</a>
+						<a href="#">Условия бронирования</a>
+						<a href="#">Варианты Оплаты</a>
+						<a href="#">Договор оферты</a>
+					</div>
+			
+					<div class="footer_block">
+						<span><span>8-800-500-04-89</span> (Россия)</span>
+						<span><span>8-383-383-00-77</span> (Новосибирск)</span>
+						<span>Офис в Новосибирске:</span>
+						<span>ул. Советская 10, офис 205</span>
+					</div>
+			
+					<div class="footer_block">
+						<span>Присоединяйтесь:</span>
+					
+						<ul class="socials">
+							<li><a href="#"><img src="img/vk_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/fb_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/tw_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/rb_footer.png" alt="" /></a></li>
+						</ul>
+					
+						<div class="clear"></div>
+					</div>
+			
+					<div class="footer_block">
+						<img class="payanyway" src="img/payanyway.png" alt="" /> <br>
+						<img src="img/mastercard.png" alt="" />
+						<img src="img/visa.png" alt="" />
+					</div>
+			
+					<div class="clear"></div>			
+				</div>
+			</div>
+		
+			<div class="last_row">
+				<p>Все права защищены. © AYS hotels 2016.</p>
+			</div>
+		</footer>
+	</div>
+</div>
+
+</body>
+</html>

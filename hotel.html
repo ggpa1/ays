@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AYS</title>
+	
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/jgrowl.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.formstyler.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<!-- подключаемые скрипты jQuery -->
+	<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery-ui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.datepicker.extension.range.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/swiper.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.formstyler.js" charset="utf-8"></script>
+	
+	<script type="text/javascript" src="js/jquery.arcticmodal-0.3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/jquery.arcticmodal-0.3.css" type="text/css" />
+	<link rel="stylesheet" href="css/themes/simple.css" type="text/css" />
+	
+	<script src="js/lightgallery-all.min.js"></script>
+	<link href="css/lightgallery.css" rel="stylesheet">
+	
+	<!-- индивидуальные скрипты -->
+	<script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<!-- скрипт для пиксельной верстки
+<script type="text/javascript" src="js/crosspixel_debug.js"></script> -->
+
+<div style="display: none;">
+    <div class="box-modal" id="registerModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Регистрация</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="Фамилия" />
+        	<input type="text" placeholder="Имя" />
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Придумайте пароль" />
+        	<input type="text" placeholder="Повторите пароль" />
+        </div>
+        <a href="#" class="recovery_href">Забыли пароль?</a>
+        <div class="clear"></div>
+        
+        <button class="red">Войти</button>
+        
+        <div class="line_div">
+        	<span>или</span>
+        </div>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <p>Регистрируясь, вы автоматически принимаете нашу политику конфиденциальности и пользовательское соглашение</p>
+    </div>
+</div>
+
+<div style="display: none;">
+    <div class="box-modal" id="loginModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Личный кабинет</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Пароль" />
+        </div>
+        
+        <button class="red">Войти</button>
+        
+        <p>Вход через соцсети</p>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <a class="register" href="#" onclick="$('#loginModal').arcticmodal('close'); $('#registerModal').arcticmodal(); return false;">ПРОЙТИ РЕГИСТРАЦИЮ</a>
+    </div>
+</div>
+
+<div class="fwrapper">
+	<div class="fcontent">
+		<div class="wrapper header">
+			<header class="container">
+				<div class="mobile_ham_container">
+					<div class="mobile_ham">
+  						<span></span>
+  						<span></span>
+  						<span></span>
+					</div>
+				</div>
+	
+				<a href="/"><img class="logo" src="img/header_logo.png" alt="" /></a>
+		<ul class="main_nav">
+			<li>
+				<a href="sklon.html">Склоны</a>
+				<ul>
+					<li><a href="sklon.html">Роза Хутор</a></li>
+					<li><a href="sklon.html">Шерегеш</a></li>
+				</ul>
+			</li>
+			<li><a href="choice.html">Гостиницы</a></li>
+			<li><a href="#">Туры</a></li>
+			<li><a href="#">Мероприятия</a></li>
+		</ul>
+		
+				<p><img src="img/phone_icon.png" alt="" /> <span>8 800 500 04 89</span></p>
+				<button onclick="$('#loginModal').arcticmodal();"><span>Войти</span></button>
+			</header>
+		</div>
+		
+		<div class="wrapper sklon" style="background-image: url('img/hotels/ays_background.jpg');">
+			<section class="container">
+				<h1>AYS</h1>
+			</section>
+		</div>
+		
+		<div class="wrapper">
+			<section class="container sklon_content hotel">				
+				<div class="text_container">
+					<div class="left_block">
+						<h3>САМЫЙ ВЕСЕЛЫЙ ОТЕЛЬ ШЕРЕГЕША ЖДЕТ ВСЕХ, КТО ЛЮБИТ АКТИВНЫЙ ОТДЫХ</h3>
+						<p>Шерегеш – это самый снежный курорт России, куда с ноября по май слетается любящая активный отдых молодежь. Более миллиона человек ежегодно предпочитают склоны российского курорта горнолыжными трассам Австрии и Швейцарии, что неудивительно - инфраструктура в Шерегеше развита ничуть не хуже – те же горы, гостиницы, бары, сервис, веселые красивые люди, однако отсутствует языковой барьер, а цены по-хорошему удивляют.</p>
+						<p>Снежный покров в Шерегеше достигает порой 4 метров, а благодаря уникальным особенностям местного климата, снег здесь сухой и не слипается, соответственно, идеален для фрирайда. Склоны покрыты лесом, и туристы шутят, что нельзя просто так приехать на Шерегеш и не пообниматься с елкой.</p>
+					</div>
+					
+					<div class="right_block">
+						<ul>
+							<li><span>Ближайший подъемник в 5 минутах ходьбы</span></li>
+							<li><span>Самая низкая стоимость проживания (от 500 руб. сутки)</span></li>
+							<li><span>Собственные автобусные туры</span></li>
+							<li><span>Собственный экскурсионный ратрак</span></li>
+							<li><span>Баня и мангал на территории гостиницы</span></li>
+							<li><span>Бесплатная охраняемая парковка</span></li>
+							<li><span>Самый лучший кофе на курорте!</span></li>
+						</ul>
+						
+						<div class="tour_block">
+							<h4>Выгодный тур выходного дня</h4>
+							<p>Суббота - Воскресенье</p>
+							<span class="line">2 дня от <span class="minus">1200 руб.</span></span>
+							<span class="big">900</span>
+							<span class="small">руб.</span>
+			
+							<button onclick="document.location = 'tours_confirm.html';">Купить</button>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+				
+				<div class="swiper-container photos">
+        			<div class="swiper-wrapper">
+        				<div class="swiper-slide" data-index="0" style="background-image: url('img/skloni/photos/1.jpg');"><div class="overlay"><img src="img/icons/lupa.png" alt="" /></div></div>        		
+        				<div class="swiper-slide" data-index="1" style="background-image: url('img/skloni/photos/2.jpg');"><div class="overlay"><img src="img/icons/lupa.png" alt="" /></div></div>
+        				<div class="swiper-slide" data-index="2" style="background-image: url('img/skloni/photos/3.jpg');"><div class="overlay"><img src="img/icons/lupa.png" alt="" /></div></div>
+        				<div class="swiper-slide" data-index="3" style="background-image: url('img/skloni/photos/4.jpg');"><div class="overlay"><img src="img/icons/lupa.png" alt="" /></div></div>        		
+        				<div class="swiper-slide" data-index="4" style="background-image: url('img/skloni/photos/5.jpg');"><div class="overlay"><img src="img/icons/lupa.png" alt="" /></div></div>			
+        			</div>
+        	
+        			<!-- Add Arrows -->
+        			<div class="swiper-button-next swiper-button-white"></div>
+        			<div class="swiper-button-prev swiper-button-white"></div>
+    			</div>
+    			
+    			<!-- Initialize Swiper -->
+    			<script>
+    				var swiper = new Swiper('.swiper-container.photos', {
+    					nextButton: '.swiper-container.photos .swiper-button-next',
+    	        		prevButton: '.swiper-container.photos .swiper-button-prev',
+        				slidesPerView: 3,
+        				paginationClickable: true,
+        				spaceBetween: 6,
+        				
+        				breakpoints: {
+        				    // when window width is <= 320px
+        				    480: {
+        				      slidesPerView: 1,
+        				      spaceBetweenSlides: 0
+        				    }
+        				  }
+    				});
+    			</script>
+    			
+				<script type="text/javascript">
+  					$(document).ready(function() {
+  							
+  						$('body').on('click', '.sklon_content .swiper-slide', function() {
+  							var index = $(this).attr('data-index');
+  								
+  							$(this).lightGallery({
+            					dynamic:true,
+            					html:true,
+            					mobileSrc:true,
+            					thumbnail: false,
+            					index: index,
+            					dynamicEl:[
+									{"src":"img/skloni/photos/1_big.jpg"},                       
+                					{"src":"img/skloni/photos/2_big.jpg"},
+                					{"src":"img/skloni/photos/3_big.jpg"},
+                					{"src":"img/skloni/photos/4_big.jpg"},
+                					{"src":"img/skloni/photos/5_big.jpg"},
+            					]
+        					});	
+        
+        					return false;
+  						 });
+  					});
+				</script>				
+			</section>
+		</div>
+		
+		<div class="wrapper">
+			<section class="container hotel_numbers">
+				<h4>Номера</h4>
+				
+				<div class="swiper-container numbers">
+        			<div class="swiper-wrapper">
+        				<div class="swiper-slide">
+        					<h5>Эконом</h5>
+        					
+        					<div class="image_block number1" data-index="0" style="background-image: url('img/skloni/photos/3.jpg');">
+        						<div class="overlay"><img src="img/icons/lupa.png" alt="" /></div>
+        						<div class="blue_label">
+        							<div class="icon">
+        								<img src="img/icons/photo.png" alt="" />
+        							</div>
+        							
+        							<div class="href">
+        								<a href="#">Забронировать</a>
+        							</div>
+        						</div>
+        					</div>
+        					
+        					<div class="description_block">
+        						<a href="#">Описание <img src="img/right_arrow_gray.png" alt="" /> </a>
+        						<p>sdfljdhs lsdkfj sdf  ksdjfksjdhfklsdjb lsdjhfb jhsdbflsdjhbf ljhbdsf</p>
+        					</div>
+        				</div>        		
+
+        				<div class="swiper-slide">
+        					<h5>Стандарт</h5>
+        					
+        					<div class="image_block number2" data-index="1" style="background-image: url('img/skloni/photos/4.jpg');">
+        						<div class="overlay"><img src="img/icons/lupa.png" alt="" /></div>
+        						<div class="blue_label">
+        							<div class="icon">
+        								<img src="img/icons/photo.png" alt="" />
+        							</div>
+        							
+        							<div class="href">
+        								<a href="#">Забронировать</a>
+        							</div>
+        						</div>        						
+        					</div>
+        					
+        					<div class="description_block">
+        						<a href="#">Описание <img src="img/right_arrow_gray.png" alt="" /> </a>
+        						<p>sdfljdhs lsdkfj sdf  ksdjfksjdhfklsdjb lsdjhfb jhsdbflsdjhbf ljhbdsf</p>
+        					</div>        					
+        				</div> 
+        				
+        				<div class="swiper-slide">
+        					<h5>Люкс</h5>
+        					
+        					<div class="image_block number3" data-index="2" style="background-image: url('img/skloni/photos/5.jpg');">
+        						<div class="overlay"><img src="img/icons/lupa.png" alt="" /></div>
+        						<div class="blue_label">
+        							<div class="icon">
+        								<img src="img/icons/photo.png" alt="" />
+        							</div>
+        							
+        							<div class="href">
+        								<a href="#">Забронировать</a>
+        							</div>
+        						</div>        						
+        					</div>
+        					
+        					<div class="description_block">
+        						<a href="#">Описание <img src="img/right_arrow_gray.png" alt="" /> </a>
+        						<p>sdfljdhs lsdkfj sdf  ksdjfksjdhfklsdjb lsdjhfb jhsdbflsdjhbf ljhbdsf</p>
+        					</div>        					
+        				</div> 			
+        			</div>
+        	
+        			<!-- Add Arrows -->
+        			<div class="swiper-button-next swiper-button-white"></div>
+        			<div class="swiper-button-prev swiper-button-white"></div>
+    			</div>
+    			
+    			<script>
+    				var swiper = new Swiper('.swiper-container.numbers', {
+    					nextButton: '.swiper-container.numbers .swiper-button-next',
+    	        		prevButton: '.swiper-container.numbers .swiper-button-prev',
+        				slidesPerView: 3,
+        				paginationClickable: true,
+        				spaceBetween: 6,
+        				
+        				breakpoints: {
+        				    // when window width is <= 320px
+        				    480: {
+        				      slidesPerView: 1,
+        				      spaceBetweenSlides: 0
+        				    }
+        				  }
+    				});
+    			</script>
+    			
+				<script type="text/javascript">
+  					$(document).ready(function() {
+  							
+  						$('body').on('click', '.swiper-slide .image_block.number1 .overlay', function() {
+  							var index = $(this).parent().attr('data-index');
+  								
+  							$(this).lightGallery({
+            					dynamic:true,
+            					html:true,
+            					mobileSrc:true,
+            					thumbnail: false,
+            					index: index,
+            					dynamicEl:[
+									{"src":"img/skloni/photos/3_big.jpg"},                       
+                					{"src":"img/skloni/photos/3_big.jpg"},
+                					{"src":"img/skloni/photos/3_big.jpg"},
+            					]
+        					});	
+        
+        					return false;
+  						 });
+  						
+  						$('body').on('click', '.swiper-slide .image_block.number2 .overlay', function() {
+  							var index = $(this).parent().attr('data-index');
+  								
+  							$(this).lightGallery({
+            					dynamic:true,
+            					html:true,
+            					mobileSrc:true,
+            					thumbnail: false,
+            					index: index,
+            					dynamicEl:[
+									{"src":"img/skloni/photos/4_big.jpg"},                       
+                					{"src":"img/skloni/photos/4_big.jpg"},
+                					{"src":"img/skloni/photos/4_big.jpg"},
+            					]
+        					});	
+        
+        					return false;
+  						 });
+  						
+  						$('body').on('click', '.swiper-slide .image_block.number3 .overlay', function() {
+  							var index = $(this).parent().attr('data-index');
+  								
+  							$(this).lightGallery({
+            					dynamic:true,
+            					html:true,
+            					mobileSrc:true,
+            					thumbnail: false,
+            					index: index,
+            					dynamicEl:[
+									{"src":"img/skloni/photos/5_big.jpg"},                       
+                					{"src":"img/skloni/photos/5_big.jpg"},
+                					{"src":"img/skloni/photos/5_big.jpg"},
+            					]
+        					});	
+        
+        					return false;
+  						 });
+  					});
+				</script>    			   						
+			</section>
+		</div>
+		
+		<div class="wrapper">
+			<section class="container hotel_numbers">
+				<h4>Отзывы наших гостей</h4>
+				
+		 <!-- Swiper -->
+    	<div class="swiper-container reviews">
+        	<div class="swiper-wrapper">
+	            <div class="swiper-slide">
+	            	<img src="img/reviews/1.png" alt="" />
+	            	<h4>Владимир Иванов</h4>
+	            	
+	            	<div class="line">
+	            		<img src="img/quote.jpg" alt="" />
+	            	</div>
+	            	
+	            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed urna sed neque blandit gravida vitae bibend um dictum, nisl nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	            </div>
+	            
+            	<div class="swiper-slide">
+            		<img src="img/reviews/2.png" alt="" />
+            		<h4>Владимир Иванов</h4>
+            		
+	            	<div class="line">
+	            		<img src="img/quote.jpg" alt="" />
+	            	</div>
+	            	
+	            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed urna sed neque blandit gravida vitae bibend um dictum, nisl nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>            		
+            	</div>
+            	
+            	<div class="swiper-slide">
+            		<img src="img/reviews/3.png" alt="" />
+            		<h4>Владимир Иванов</h4>
+            		
+	            	<div class="line">
+	            		<img src="img/quote.jpg" alt="" />
+	            	</div>
+	            	
+	            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed urna sed neque blandit gravida vitae bibend um dictum, nisl nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>            		
+            	</div>
+            	
+            	<div class="swiper-slide">
+            		<img src="img/reviews/1.png" alt="" />
+            		<h4>Владимир Иванов</h4>
+            		
+	            	<div class="line">
+	            		<img src="img/quote.jpg" alt="" />
+	            	</div>
+	            	
+	            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed urna sed neque blandit gravida vitae bibend um dictum, nisl nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>            		
+            	</div>
+            	
+            	<div class="swiper-slide">
+            		<img src="img/reviews/2.png" alt="" />
+            		<h4>Владимир Иванов</h4>
+            		
+	            	<div class="line">
+	            		<img src="img/quote.jpg" alt="" />
+	            	</div>
+	            	
+	            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed urna sed neque blandit gravida vitae bibend um dictum, nisl nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>            		
+            	</div>            	
+        	</div>
+        	
+        	<!-- Add Pagination -->
+        	<div class="swiper-pagination"></div>
+    	</div>
+
+    	<!-- Initialize Swiper -->
+    	<script>
+    		var swiper = new Swiper('.swiper-container.reviews', {
+        		pagination: '.swiper-container.reviews .swiper-pagination',
+        		slidesPerView: 3,
+        		paginationClickable: true,
+        		spaceBetween: 22,
+        		breakpoints: {
+        		    980: {
+        		      slidesPerView: 1,
+        		      spaceBetweenSlides: 30
+        		    }
+        		  }
+    		});
+    	</script>				
+				
+			</section>
+		</div>
+		
+		<div class="wrapper">
+			<section class="contacts">
+				<h4>Контакты</h4>
+				
+				<div class="map_container">
+					<iframe src="https://api-maps.yandex.ru/frame/v1/-/CZbqFHLh" width="100%" height="450" frameborder="0"></iframe>
+					<div class="info_container">
+						<h5>8 800 500 04 89</h5>
+						
+						<div class="half_container">
+							<h6><img src="img/red_label.jpg" alt="" /> Из Москвы и других городов:</h6>
+							<ul>
+								<li><span>на самолете или поезде до г. Новокузнецк, далее до Шерегена:</span>
+									<p>- на такси</p>
+									<p>- на рейсовом автобусе</p></li>
+							</ul>
+						</div>
+						
+						<div class="half_container">
+							<h6><img src="img/red_label.jpg" alt="" /> Из Новосибирска, Томска, Красноярска, Барнаула, Кемерово и Новокузнецка:</h6>
+							<ul>
+								<li><span>на машне</span></li>
+								<li><span>на автобусном туре</span></li>	
+							</ul>
+						</div>
+						
+						<div class="clear"></div>
+						
+						<div class="half_container bordered first">
+							<p>Кемеровская обл., Таштагольский р-н, Шерегеш пгт, гора Зеленая 52.951255, 87.964691</p>
+						</div>
+						
+						<div class="half_container bordered">
+							<p>Более подробная информация у менеджеров.</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="buttons_layout">
+					<button class="vk_big_button">Группа отеля ВКонтакте</button>
+					<button class="blue_button" onclick="document.location = 'terms.html';">Правила проживания в отеле</button>
+				</div>
+			</section>
+		</div>		
+		
+	</div>
+	
+	<div class="wrapper footer">
+		<footer>
+			<div class="row">
+				<div class="container">
+					<div class="footer_block">
+						<a href="#">Склоны</a>
+						<a href="#">Гостиницы</a>
+						<a href="#">Туры</a>
+						<a href="#">Мероприятия</a>
+					</div>
+			
+					<div class="footer_block">
+						<a href="#">Забронировать</a>
+						<a href="#">Условия бронирования</a>
+						<a href="#">Варианты Оплаты</a>
+						<a href="#">Договор оферты</a>
+					</div>
+			
+					<div class="footer_block">
+						<span><span>8-800-500-04-89</span> (Россия)</span>
+						<span><span>8-383-383-00-77</span> (Новосибирск)</span>
+						<span>Офис в Новосибирске:</span>
+						<span>ул. Советская 10, офис 205</span>
+					</div>
+			
+					<div class="footer_block">
+						<span>Присоединяйтесь:</span>
+					
+						<ul class="socials">
+							<li><a href="#"><img src="img/vk_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/fb_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/tw_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/rb_footer.png" alt="" /></a></li>
+						</ul>
+					
+						<div class="clear"></div>
+					</div>
+			
+					<div class="footer_block">
+						<img class="payanyway" src="img/payanyway.png" alt="" /> <br>
+						<img src="img/mastercard.png" alt="" />
+						<img src="img/visa.png" alt="" />
+					</div>
+			
+					<div class="clear"></div>			
+				</div>
+			</div>
+		
+			<div class="last_row">
+				<p>Все права защищены. © AYS hotels 2016.</p>
+			</div>
+		</footer>
+	</div>
+</div>
+
+</body>
+</html>

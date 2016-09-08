@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AYS</title>
+	
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/jgrowl.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.formstyler.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<!-- подключаемые скрипты jQuery -->
+	<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery-ui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.datepicker.extension.range.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/swiper.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.formstyler.js" charset="utf-8"></script>
+	
+	<script type="text/javascript" src="js/jquery.arcticmodal-0.3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/jquery.arcticmodal-0.3.css" type="text/css" />
+	<link rel="stylesheet" href="css/themes/simple.css" type="text/css" />
+	
+	<script src="js/lightgallery-all.min.js"></script>
+	<link href="css/lightgallery.css" rel="stylesheet">
+	
+	<!-- индивидуальные скрипты -->
+	<script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<!-- скрипт для пиксельной верстки
+<script type="text/javascript" src="js/crosspixel_debug.js"></script> -->
+
+<div style="display: none;">
+    <div class="box-modal" id="registerModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Регистрация</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="Фамилия" />
+        	<input type="text" placeholder="Имя" />
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Придумайте пароль" />
+        	<input type="text" placeholder="Повторите пароль" />
+        </div>
+        <a href="#" class="recovery_href">Забыли пароль?</a>
+        <div class="clear"></div>
+        
+        <button class="red">Войти</button>
+        
+        <div class="line_div">
+        	<span>или</span>
+        </div>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <p>Регистрируясь, вы автоматически принимаете нашу политику конфиденциальности и пользовательское соглашение</p>
+    </div>
+</div>
+
+<div style="display: none;">
+    <div class="box-modal" id="loginModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Личный кабинет</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Пароль" />
+        </div>
+        
+        <button class="red">Войти</button>
+        
+        <p>Вход через соцсети</p>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <a class="register" href="#" onclick="$('#loginModal').arcticmodal('close'); $('#registerModal').arcticmodal(); return false;">ПРОЙТИ РЕГИСТРАЦИЮ</a>
+    </div>
+</div>
+
+<div class="fwrapper">
+	<div class="fcontent">
+		<div class="wrapper header">
+			<header class="container">
+				<div class="mobile_ham_container">
+					<div class="mobile_ham">
+  						<span></span>
+  						<span></span>
+  						<span></span>
+					</div>
+				</div>
+	
+				<a href="/"><img class="logo" src="img/header_logo.png" alt="" /></a>
+		<ul class="main_nav">
+			<li>
+				<a href="sklon.html">Склоны</a>
+				<ul>
+					<li><a href="sklon.html">Роза Хутор</a></li>
+					<li><a href="sklon.html">Шерегеш</a></li>
+				</ul>
+			</li>
+			<li><a href="choice.html">Гостиницы</a></li>
+			<li><a href="#">Туры</a></li>
+			<li><a href="#">Мероприятия</a></li>
+		</ul>
+		
+				<p><img src="img/phone_icon.png" alt="" /> <span>8 800 500 04 89</span></p>
+				<button onclick="$('#loginModal').arcticmodal();"><span>Войти</span></button>
+			</header>
+		</div>
+		
+		<div class="wrapper sklon" style="background-image: url('img/events_background.jpg');">
+			<section class="container">
+				<h1>МЕРОПРИЯТИЯ</h1>
+			</section>
+		</div>
+		
+		<div class="wrapper">
+			<section class="container sklon_content hotel">				
+				<ul class="events_nav">
+					<li class="active"><a href="#">Предстоящие</a></li>
+					<li><a href="#">Прошедшие</a></li>
+				</ul>
+				
+
+				<div class="tab_content tab1">
+			<div class="events_container">
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+			
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+			
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>								
+			
+				<div class="hidden">
+
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/1.jpg');">
+						<div class="overlay" data-index="0">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>								
+
+				</div>
+				<div class="clear"></div>
+			
+				<script type="text/javascript">
+  					$(document).ready(function() {
+  							
+  						$('body').on('click', '.event_block .overlay', function() {
+  							var index = $(this).attr('data-index');
+  								
+  							$(this).lightGallery({
+            					dynamic:true,
+            					html:true,
+            					mobileSrc:true,
+            					thumbnail: false,
+            					index: index,
+            					dynamicEl:[
+									{"src":"img/skloni/photos/1_big.jpg"},                       
+                					{"src":"img/skloni/photos/2_big.jpg"},
+                					{"src":"img/skloni/photos/3_big.jpg"},
+                					{"src":"img/skloni/photos/4_big.jpg"},
+                					{"src":"img/skloni/photos/5_big.jpg"},
+            					]
+        					});	
+        
+        					return false;
+  						 });
+  					});
+				</script>			
+			
+				<a href="#" class="events_last_further_href"><img src="img/gray_down_arrow.png" alt="" /><span>показать еще</span></a>									
+			</div>				
+				</div>
+				
+				<div class="tab_content tab2">
+			<div class="events_container">
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+			
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+			
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>								
+			
+				<div class="hidden">
+
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>
+				
+				<div class="event_block">
+					<div class="image_block" style="background-image: url('img/skloni/photos/2.jpg');">
+						<div class="overlay" data-index="1">
+							<img src="img/icons/lupa.png" alt="" />
+						</div>
+					</div>
+					
+					<div class="text_block">
+						<p><img src="img/calendar_icon.png" alt="" /> <span>03.01.2017 — 07.01.2017</span></p>
+						<h5>BOOGEL WOOGEL 2017</h5>
+					</div>
+				</div>								
+
+				</div>
+				<div class="clear"></div>
+			
+				<script type="text/javascript">
+  					$(document).ready(function() {
+  							
+  						$('body').on('click', '.event_block .image_block', function() {
+  							var index = $(this).attr('data-index');
+  								
+  							$(this).lightGallery({
+            					dynamic:true,
+            					html:true,
+            					mobileSrc:true,
+            					thumbnail: false,
+            					index: index,
+            					dynamicEl:[
+									{"src":"img/skloni/photos/1_big.jpg"},                       
+                					{"src":"img/skloni/photos/2_big.jpg"},
+                					{"src":"img/skloni/photos/3_big.jpg"},
+                					{"src":"img/skloni/photos/4_big.jpg"},
+                					{"src":"img/skloni/photos/5_big.jpg"},
+            					]
+        					});	
+        
+        					return false;
+  						 });
+  					});
+				</script>			
+			
+				<a href="#" class="events_last_further_href"><img src="img/gray_down_arrow.png" alt="" /><span>показать еще</span></a>									
+			</div>	
+				</div>
+				
+			</section>
+		</div>		
+		
+	</div>
+	
+	<div class="wrapper footer">
+		<footer>
+			<div class="row">
+				<div class="container">
+					<div class="footer_block">
+						<a href="#">Склоны</a>
+						<a href="#">Гостиницы</a>
+						<a href="#">Туры</a>
+						<a href="#">Мероприятия</a>
+					</div>
+			
+					<div class="footer_block">
+						<a href="#">Забронировать</a>
+						<a href="#">Условия бронирования</a>
+						<a href="#">Варианты Оплаты</a>
+						<a href="#">Договор оферты</a>
+					</div>
+			
+					<div class="footer_block">
+						<span><span>8-800-500-04-89</span> (Россия)</span>
+						<span><span>8-383-383-00-77</span> (Новосибирск)</span>
+						<span>Офис в Новосибирске:</span>
+						<span>ул. Советская 10, офис 205</span>
+					</div>
+			
+					<div class="footer_block">
+						<span>Присоединяйтесь:</span>
+					
+						<ul class="socials">
+							<li><a href="#"><img src="img/vk_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/fb_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/tw_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/rb_footer.png" alt="" /></a></li>
+						</ul>
+					
+						<div class="clear"></div>
+					</div>
+			
+					<div class="footer_block">
+						<img class="payanyway" src="img/payanyway.png" alt="" /> <br>
+						<img src="img/mastercard.png" alt="" />
+						<img src="img/visa.png" alt="" />
+					</div>
+			
+					<div class="clear"></div>			
+				</div>
+			</div>
+		
+			<div class="last_row">
+				<p>Все права защищены. © AYS hotels 2016.</p>
+			</div>
+		</footer>
+	</div>
+</div>
+
+</body>
+</html>

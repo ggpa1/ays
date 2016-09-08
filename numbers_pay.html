@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AYS</title>
+	
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/jgrowl.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/hint.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.formstyler.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<!-- подключаемые скрипты jQuery -->
+	<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery-ui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.datepicker.extension.range.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/swiper.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.formstyler.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.mask.min.js" charset="utf-8"></script>
+
+	<script type="text/javascript" src="js/jquery.arcticmodal-0.3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/jquery.arcticmodal-0.3.css" type="text/css" />
+	<link rel="stylesheet" href="css/themes/simple.css" type="text/css" />
+	
+	<!-- индивидуальные скрипты -->
+	<script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<!-- скрипт для пиксельной верстки
+<script type="text/javascript" src="js/crosspixel_debug.js"></script> -->
+
+<div style="display: none;">
+    <div class="box-modal" id="registerModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Регистрация</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="Фамилия" />
+        	<input type="text" placeholder="Имя" />
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Придумайте пароль" />
+        	<input type="text" placeholder="Повторите пароль" />
+        </div>
+        <a href="#" class="recovery_href">Забыли пароль?</a>
+        <div class="clear"></div>
+        
+        <button class="red">Войти</button>
+        
+        <div class="line_div">
+        	<span>или</span>
+        </div>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <p>Регистрируясь, вы автоматически принимаете нашу политику конфиденциальности и пользовательское соглашение</p>
+    </div>
+</div>
+
+<div style="display: none;">
+    <div class="box-modal" id="loginModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Личный кабинет</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Пароль" />
+        </div>
+        
+        <button class="red">Войти</button>
+        
+        <p>Вход через соцсети</p>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <a class="register" href="#" onclick="$('#loginModal').arcticmodal('close'); $('#registerModal').arcticmodal(); return false;">ПРОЙТИ РЕГИСТРАЦИЮ</a>
+    </div>
+</div>
+
+<div class="fwrapper">
+	<div class="fcontent">
+
+<div class="wrapper header">
+	<header class="container">
+		<div class="mobile_ham_container">
+			<div class="mobile_ham">
+  				<span></span>
+  				<span></span>
+  				<span></span>
+			</div>
+		</div>
+	
+		<a href="/"><img class="logo" src="img/header_logo.png" alt="" /></a>
+		<ul class="main_nav">
+			<li>
+				<a href="sklon.html">Склоны</a>
+				<ul>
+					<li><a href="sklon.html">Роза Хутор</a></li>
+					<li><a href="sklon.html">Шерегеш</a></li>
+				</ul>
+			</li>
+			<li><a href="choice.html">Гостиницы</a></li>
+			<li><a href="#">Туры</a></li>
+			<li><a href="#">Мероприятия</a></li>
+		</ul>
+		
+		<p><img src="img/phone_icon.png" alt="" /> <span>8 800 500 04 89</span></p>
+		<button onclick="$('#loginModal').arcticmodal();"><span>Войти</span></button>
+	</header>
+</div>
+
+<div class="wrapper result_search">
+	<section class="container">		
+		<div class="search_container">
+
+			<!-- первый блок -->
+			<div class="search_block first">
+				<div class="search_part">
+					<p>Город</p>
+					<ul class="city">
+						<li class="active"><a href="#">Сочи</a></li>
+						<li><a href="#">Шерегеш</a></li>
+					</ul>
+					
+					<div class="clear"></div>
+				</div>
+				
+
+				<div class="search_part dates">
+					<div class="date_block">
+						<p>Дата прибытия</p>
+						<input type="text" id="hotelStartDate" class="start_href" />
+						<input type="hidden" id="datepicker_start_show" value="0" />
+						<div id="datepicker_start"></div>
+					
+						<img class="down_arrow dates" src="img/down_arrow.png" alt="" />
+						<img class="up_arrow dates" src="img/up_arrow.png" alt="" />
+					</div>
+				
+					<div class="date_block">
+						<p>Дата отъезда</p>
+						<input type="text" id="hotelEndDate" class="start_href" />
+						<input type="hidden" id="datepicker_end_show" value="0" />
+						<div id="datepicker_end"></div>
+					
+						<img class="down_arrow dates second" src="img/down_arrow.png" alt="" />
+						<img class="up_arrow dates second" src="img/up_arrow.png" alt="" />
+						<!-- <img class="down_arrow" src="img/down_arrow.png" alt="" /> -->
+					</div>
+				</div>
+			
+				<div class="search_part hotel">
+					<p>Отель</p>
+					<select>
+						<option value="">1Отель Paradise Resort</option>
+						<option value="">2Отель Paradise Resort</option>
+						<option value="">3Отель Paradise Resort</option>
+					</select>
+					
+					<script>
+						$(document).ready(function(){							
+							$('select').styler({
+								selectSearch: true
+							});
+							
+							$('#hotelStartDate').mask('00/00/0000');
+							$('#hotelEndDate').mask('00/00/0000');
+						});
+					</script>
+				
+					<img class="toggle" src="img/toggle_arrow.png" alt="" />
+				</div>
+			
+				<div class="search_part counts adult">
+					<p>&nbsp;</p>
+				
+					<input type="text" class="adult_input" value="0 взрослых" data-number="0" placeholder="0 взрослых" disabled="disabled" />
+					<a href="#"><img class="plus" src="img/plus-icon.jpg" alt="" /></a>
+					<a href="#"><img class="minus" src="img/minus-icon.jpg" alt="" /></a>
+				</div>
+			
+				<div class="search_part counts child">
+					<p>&nbsp;</p>
+				
+					<input type="text" class="child_input" value="0 детей" data-number="0" placeholder="0 детей" disabled="disabled" />
+					<a href="#"><img class="plus" src="img/plus-icon.jpg" alt="" /></a>
+					<a href="#"><img class="minus" src="img/minus-icon.jpg" alt="" /></a>
+				</div>
+			
+				<div class="search_part">
+					<p>&nbsp;</p>
+					<button class="blue" onclick="document.location = '/numbers.html';">Забронировать</button>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+</div>
+
+<div class="wrapper breadcrumbs">
+	<section class="container">
+		<ul>
+			<li class="active"><a href="numbers.html">Шаг 1. Выбор тура</a></li>
+			<li class="active"><a href="numbers_confirm.html">Шаг 2. Подтверждение</a></li>
+			<li class="active"><span>Шаг 3. Оплата</span></li>
+		</ul>
+		
+		<div class="login_reminder">
+			<a href="#" onclick="$('#loginModal').arcticmodal(); return false;">Уже регистрировались?</a>
+			<a href="#" onclick="$('#loginModal').arcticmodal(); return false;">Нажмите, чтобы войти</a>
+		</div>
+		
+		<div class="clear"></div>
+	</section>
+</div>
+
+<div class="wrapper confirm">
+	<section class="container">
+		<div class="left_block">
+			<h4>Ваше бронирование:</h4>
+			<p class="common">Тур в Сочи, гостиница AYS Роза Хутор</p>
+			
+			<table class="doubled1">
+				<tr>
+					<td><span>Одноместный номер Эконом (5 дней)</span></td>
+					<td><span>4500 руб.</span></td>
+				</tr>
+				
+				<tr>
+					<td><span>Завтрак</span></td>
+					<td><span>600 руб.</span></td>
+				</tr>
+				
+				<tr>
+					<td><span>Прокат инвентаря</span></td>
+					<td><span>800 руб.</span></td>
+				</tr>
+				
+				<tr>
+					<td><span>Инструктор</span></td>
+					<td><span>500 руб.</span></td>
+				</tr>
+				
+				<tr>
+					<td><span>Транспорт</span></td>
+					<td><span>600 руб.</span></td>
+				</tr>
+				
+				<tr>
+					<td><span class="bold">К оплате</span></td>
+					<td><span class="bold">7000 руб.</span></td>
+				</tr>
+			</table>
+			
+			<p class="common">Отправить счет на оплату на почту: </p>
+			<div class="clear"></div>
+			
+			<input type="text" placeholder="yourmail@gmail.com" />
+			<button class="blue">Отправить</button>
+		</div>
+		
+		<div class="right_block">
+			<p class="common margined">Номер карты</p>
+			<input class="common imaged" type="text" placeholder="xxxx xxxx xxxx xxxx" />
+			
+			<div class="input_left">
+				<p class="common margined">Срок действия</p>
+				<input class="common" type="text" placeholder="ММ-ГГ" />
+			</div>
+			
+			<div class="input_right">
+				<p class="common margined">Код CVV2/CVC2</p>
+				<input class="common" type="text" placeholder="xxx" />
+			</div>
+			
+			<div class="clear"></div>
+			
+			<p class="common margined">Имя (как на карте)</p>
+			<input class="common" type="text" placeholder="" />
+			<button onclick="$('#payModal').arcticmodal();">Оплатить</button>
+		</div>
+		
+		<div class="clear"></div>
+	</section>
+</div>
+
+	</div>
+	
+	<div class="wrapper footer">
+		<footer>
+			<div class="row">
+				<div class="container">
+					<div class="footer_block">
+						<a href="#">Склоны</a>
+						<a href="#">Гостиницы</a>
+						<a href="#">Туры</a>
+						<a href="#">Мероприятия</a>
+					</div>
+			
+					<div class="footer_block">
+						<a href="#">Забронировать</a>
+						<a href="#">Условия бронирования</a>
+						<a href="#">Варианты Оплаты</a>
+						<a href="#">Договор оферты</a>
+					</div>
+			
+					<div class="footer_block">
+						<span><span>8-800-500-04-89</span> (Россия)</span>
+						<span><span>8-383-383-00-77</span> (Новосибирск)</span>
+						<span>Офис в Новосибирске:</span>
+						<span>ул. Советская 10, офис 205</span>
+					</div>
+			
+					<div class="footer_block">
+						<span>Присоединяйтесь:</span>
+					
+						<ul class="socials">
+							<li><a href="#"><img src="img/vk_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/fb_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/tw_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/rb_footer.png" alt="" /></a></li>
+						</ul>
+					
+						<div class="clear"></div>
+					</div>
+			
+					<div class="footer_block">
+						<img class="payanyway" src="img/payanyway.png" alt="" /> <br>
+						<img src="img/mastercard.png" alt="" />
+						<img src="img/visa.png" alt="" />
+					</div>
+			
+					<div class="clear"></div>			
+				</div>
+			</div>
+		
+			<div class="last_row">
+				<p>Все права защищены. © AYS hotels 2016.</p>
+			</div>
+		</footer>
+	</div>
+</div>
+
+</body>
+</html>

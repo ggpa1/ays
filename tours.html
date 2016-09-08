@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AYS</title>
+	
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/jgrowl.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/hint.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.formstyler.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<!-- подключаемые скрипты jQuery -->
+	<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery-ui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.datepicker.extension.range.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/swiper.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.formstyler.js" charset="utf-8"></script>
+	
+	<script type="text/javascript" src="js/jquery.arcticmodal-0.3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/jquery.arcticmodal-0.3.css" type="text/css" />
+	<link rel="stylesheet" href="css/themes/simple.css" type="text/css" />
+	
+	<script src="js/lightgallery-all.min.js"></script>
+	<link href="css/lightgallery.css" rel="stylesheet">
+	
+	<!-- индивидуальные скрипты -->
+	<script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<!-- скрипт для пиксельной верстки
+<script type="text/javascript" src="js/crosspixel_debug.js"></script> -->
+
+<div style="display: none;">
+    <div class="box-modal" id="registerModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Регистрация</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="Фамилия" />
+        	<input type="text" placeholder="Имя" />
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Придумайте пароль" />
+        	<input type="text" placeholder="Повторите пароль" />
+        </div>
+        <a href="#" class="recovery_href">Забыли пароль?</a>
+        <div class="clear"></div>
+        
+        <button class="red">Войти</button>
+        
+        <div class="line_div">
+        	<span>или</span>
+        </div>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <p>Регистрируясь, вы автоматически принимаете нашу политику конфиденциальности и пользовательское соглашение</p>
+    </div>
+</div>
+
+<div style="display: none;">
+    <div class="box-modal" id="loginModal">
+        <div class="box-modal_close arcticmodal-close"> <img src="img/modal_cross.png" alt="" /> </div>
+        <h4>Личный кабинет</h4>
+        
+        <div class="input_container">
+        	<input type="text" placeholder="E-mail" />
+        	<input type="text" placeholder="Пароль" />
+        </div>
+        
+        <button class="red">Войти</button>
+        
+        <p>Вход через соцсети</p>
+        
+        <button class="fb">Facebook</button>
+        <button class="vk">ВКонтакте</button>
+        <div class="clear"></div>
+        
+        <a class="register" href="#" onclick="$('#loginModal').arcticmodal('close'); $('#registerModal').arcticmodal(); return false;">ПРОЙТИ РЕГИСТРАЦИЮ</a>
+    </div>
+</div>
+
+<div class="fwrapper">
+	<div class="fcontent">
+
+<div class="wrapper header">
+	<header class="container">
+		<div class="mobile_ham_container">
+			<div class="mobile_ham">
+  				<span></span>
+  				<span></span>
+  				<span></span>
+			</div>
+		</div>
+	
+		<a href="/"><img class="logo" src="img/header_logo.png" alt="" /></a>
+		<ul class="main_nav">
+			<li>
+				<a href="sklon.html">Склоны</a>
+				<ul>
+					<li><a href="sklon.html">Роза Хутор</a></li>
+					<li><a href="sklon.html">Шерегеш</a></li>
+				</ul>
+			</li>
+			<li><a href="choice.html">Гостиницы</a></li>
+			<li><a href="#">Туры</a></li>
+			<li><a href="#">Мероприятия</a></li>
+		</ul>
+		
+		<p><img src="img/phone_icon.png" alt="" /> <span>8 800 500 04 89</span></p>
+		<button onclick="$('#loginModal').arcticmodal();">Войти</button>
+	</header>
+</div>
+
+<div class="wrapper result_search">
+	<section class="container">		
+		<div class="search_container">
+		
+			<!-- второй блок -->
+			<div class="search_block second">
+				<div class="search_part">
+					<p>Город</p>
+					<ul class="city">
+						<li class="active"><a href="#">Сочи</a></li>
+						<li><a href="#">Шерегеш</a></li>
+					</ul>
+				</div>
+			
+				<div class="search_part">
+					<p>Отель</p>
+					<select>
+						<option value="">1Отель Paradise Resort</option>
+						<option value="">2Отель Paradise Resort</option>
+						<option value="">3Отель Paradise Resort</option>
+					</select>
+					
+					<script>
+						$(document).ready(function(){							
+							$('select').styler({
+								selectSearch: true
+							});
+						});
+					</script>
+				
+					<img class="toggle" src="img/toggle_arrow.png" alt="" />
+				</div>
+				
+				<div class="search_part datepicker">
+					<p>&nbsp;</p>
+					<ul>
+						<li><a href="#" class="datepicker_href">Выберите дату</a></li>
+					</ul>		
+				
+					<div id="datepicker"></div>
+				
+					<div class="tour_container">
+						<input id="tour_type" value="0" type="hidden" />
+						<h4>Ближайший тур:</h4>
+					
+						<a href="#" data-days="6,0"><span class="blue">Выходной тур</span> на 2 дня от 1200 р.</a>
+						<span class="places">осталось 2 места</span>
+					
+						<a href="#" data-days="5,6,0"><span class="blue">Выходной тур</span> на 3 дня от 1500 р.</a>
+						<span class="places">осталось 1 место</span>
+					
+						<a href="#" data-days="1,2,3,4"><span class="gold">Будний тур</span> на 4 дня от 2000 р.</a>
+						<span class="places">осталось 4 места</span>
+					
+						<a href="#" data-days="1,2,3,4,5"><span class="purple">Будний тур</span> на 1 дня от 2800 р.</a>
+						<span class="places">осталось 6 мест</span>
+					</div>
+				
+					<input type="hidden" id="datepicker_show" value="0" />
+					<img class="down_arrow tours" src="img/down_arrow.png" alt="" />
+					<img class="up_arrow tours" src="img/up_arrow.png" alt="" />
+				</div>
+			
+				<div class="search_part counts adult">
+					<p>&nbsp;</p>
+				
+					<input type="text" class="adult_input" value="0 взрослых" data-number="0" placeholder="0 взрослых" disabled="disabled" />
+					<a href="#"><img class="plus" src="img/plus-icon.jpg" alt="" /></a>
+					<a href="#"><img class="minus" src="img/minus-icon.jpg" alt="" /></a>
+				</div>
+			
+				<div class="search_part counts child">
+					<p>&nbsp;</p>
+				
+					<input type="text" class="child_input" value="0 детей" data-number="0" placeholder="0 детей" disabled="disabled" />
+					<a href="#"><img class="plus" src="img/plus-icon.jpg" alt="" /></a>
+					<a href="#"><img class="minus" src="img/minus-icon.jpg" alt="" /></a>
+				</div>
+			
+				<div class="search_part">
+					<p>&nbsp;</p>
+					<button class="blue" onclick="document.location = '/tours.html';">Забронировать</button>
+				</div>
+				
+				<div class="clear"></div>					
+			</div>
+		</div>
+	</section>
+</div>
+
+<div class="wrapper message">
+	<section class="container">
+		<p>Окно оповещения для важной информации акций, скидок и т.п.</p>
+		<a href="#"><img class="cross" src="img/cross.png" alt="" /></a>
+	</section>
+</div>
+
+<div class="wrapper breadcrumbs">
+	<section class="container">
+		<ul>
+			<li class="active"><span>Шаг 1. Выбор тура</span></li>
+			<li><span>Шаг 2. Подтверждение</span></li>
+			<li><span>Шаг 3. Оплата</span></li>
+		</ul>
+		
+		<div class="right_block">
+			<span>Туров найдено: 5</span>
+			<span>15/08/16 - 07/09/16</span>
+		</div>
+		
+		<div class="clear"></div>
+	</section>
+</div>
+
+<div class="wrapper results">
+	<section class="container">
+		<div class="left_container">
+			<div class="option_block price">
+				<h4>Цена за сутки</h4>
+				<div id="slider-range"></div>
+				<p>Диапазон: <span class="min">1000 р.</span> - <span class="max">1500 р.</span></p>
+				
+				<script>
+  					$(document).ready(function(){
+  					    $("#slider-range").slider({
+  					    	range: true,
+  					      	min: 0,
+  					      	max: 10000,
+  					      	values: [ 2000, 7200 ],
+  					      	slide: function( event, ui ) {
+  					      		$('.option_block.price span.min').text(ui.values[0] + ' р.');
+  					      		$('.option_block.price span.max').text(ui.values[1] + ' р.');
+  					      	}
+  					    });
+  					    
+  						$('.option_block.price span.min').text($("#slider-range").slider("values", 0) + ' р.');
+				      	$('.option_block.price span.max').text($("#slider-range").slider("values", 1) + ' р.');
+  					});
+  				</script>
+			</div>
+			
+			<div class="option_block">
+				<h4>Тип номера</h4>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Сатндарт</span>
+				</label>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Люкс</span>
+				</label>
+			</div>
+			
+			<div class="option_block">
+				<h4>Питание</h4>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Завтрак</span>
+				</label>
+			</div>
+			
+			<div class="option_block hidden">
+				<h4>Удобства</h4>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Телевизор</span>
+				</label>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">WI-FI</span>
+				</label>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Стиральная машина</span>
+				</label>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Холодильник</span>
+				</label>
+				
+				<div class="hidden_options">
+					<label>
+    					<input class="checkbox" type="checkbox" name="checkbox-test">
+    					<span class="checkbox-custom"></span>
+    					<span class="label">WI-FI</span>
+					</label>
+				
+					<label>
+    					<input class="checkbox" type="checkbox" name="checkbox-test">
+    					<span class="checkbox-custom"></span>
+    					<span class="label">Стиральная машина</span>
+					</label>
+				
+					<label>
+    					<input class="checkbox" type="checkbox" name="checkbox-test">
+    					<span class="checkbox-custom"></span>
+    					<span class="label">Холодильник</span>
+					</label>
+				</div>				
+				
+				<a href="#" class="further_href"><span>Показать еще</span> <img src="img/down_arrow_blue.png" alt="" /></a>
+			</div>
+			
+			<div class="option_block hidden">
+				<h4>Ванная комната</h4>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Приватная</span>
+				</label>
+				
+				<label>
+    				<input class="checkbox" type="checkbox" name="checkbox-test">
+    				<span class="checkbox-custom"></span>
+    				<span class="label">Общая</span>
+				</label>
+			</div>
+			
+			<div class="option_opener">
+				<a href="#">Другие параметры <img src="img/down_arrow_white.png" alt="" /> </a>
+			</div>
+		</div>
+		
+		<div class="right_container">
+			<div class="result_container ident1">
+				<div class="left_block">
+					<img class="percent" src="img/percent.png" alt="" />
+					<a href="#"><img class="photo_trigger one" data-index="0" src="img/photo_trigger.png" alt="" /></a>
+					
+					<img class="main_photo" data-index="0" src="img/results/1.jpg" alt="" />
+					
+		 <!-- Swiper -->
+    	<div class="swiper-container">
+        	<div class="swiper-wrapper">
+        		<div class="swiper-slide" data-index="1" style="background-image: url('img/results/2.jpg');"></div>        		
+        		<div class="swiper-slide" data-index="2" style="background-image: url('img/results/3.jpg');"></div>
+        		<div class="swiper-slide" data-index="3" style="background-image: url('img/results/4.jpg');"></div>
+        		<div class="swiper-slide" data-index="4" style="background-image: url('img/results/5.jpg');"></div>        		
+        		<div class="swiper-slide" data-index="5" style="background-image: url('img/results/6.jpg');"></div>			
+        	</div>
+        	
+        	<!-- Add Arrows -->
+        	<div class="swiper-button-next swiper-button-white"></div>
+        	<div class="swiper-button-prev swiper-button-white"></div>
+    	</div>					
+
+    	<!-- Initialize Swiper -->
+    	<script>
+    		var swiper = new Swiper('.ident1 .swiper-container', {
+    			nextButton: '.ident1 .swiper-button-next',
+    	        prevButton: '.ident1 .swiper-button-prev',
+        		slidesPerView: 3,
+        		paginationClickable: true,
+        		spaceBetween: 2
+    		});
+    	</script>
+        			
+					<script type="text/javascript">
+  						$(document).ready(function() {
+  							
+  							$('body').on('click', '.ident1 .photo_trigger, .ident1 .swiper-slide, .ident1 .main_photo', function() {
+  								var index = $(this).attr('data-index');
+  								
+  								$(this).lightGallery({
+            						dynamic:true,
+            						html:true,
+            						mobileSrc:true,
+            						thumbnail: false,
+            						index: index,
+            						dynamicEl:[
+										{"src":"img/results/1_big.jpg"},                       
+                						{"src":"img/results/2_big.jpg"},
+                						{"src":"img/results/3_big.jpg"},
+                						{"src":"img/results/4_big.jpg"},
+                						{"src":"img/results/5_big.jpg"},
+                						{"src":"img/results/6_big.jpg"},
+            						]
+        						});	
+        
+        						return false;
+  							 });
+  						});
+					</script>        			
+					
+					<div class="clear"></div>
+					
+					<table>
+						<tr>
+							<td>
+								<span class="bold">Заезд</span>
+								<span>Понедельник</span>
+								<span>19:00</span>
+							</td>
+							
+							<td>
+								<span class="bold">Выезд</span>
+								<span>Четверг</span>
+								<span>17:00</span>
+							</td>
+						</tr>
+						
+						<tr>
+							<td colspan="2"><span>Длительность проживания: 3 ночи</span></td>
+						</tr>
+					</table>
+					
+					<ul class="icons">
+						
+						<li><a href="#" aria-label="Кол-во человек" class="hint--bottom"><img src="img/icons/icon1.png" alt="" /> <span>2</span></a></li>
+						<li><a href="#" aria-label="Спальные метса" class="hint--bottom"><img src="img/icons/icon2.png" alt="" /> <span>1</span></a></li>
+						<li><a href="#" aria-label="Телевизор" class="hint--bottom"><img src="img/icons/icon3.png" alt="" /></a></li>
+						<li><a href="#" aria-label="Горы" class="hint--bottom"><img src="img/icons/icon4.png" alt="" /></a></li>
+						<li><a href="#" aria-label="Шумный" class="hint--bottom"><img src="img/icons/icon5.png" alt="" /></a></li>
+					</ul>
+				</div>
+				
+				<div class="right_block">
+					<h4>Эконом <span>[2 этаж | AYS Hostel - Комната в блоке 2 места]</span></h4>
+					<div class="text_content">
+						<ul class="parts">
+							<li><a href="#">О туре</a></li>
+							<li class="active"><a href="#">О номере</a></li>
+							<li><a href="#">О гостинице</a></li>
+							<li style="float: right;"> <a href="#"><img class="content_href open" src="img/down_arrow_gray.png" alt="" /></a> </li>
+						</ul>
+						
+						<div class="parts_content">
+							<p>1Оснащен двумя одноместными кроватями, тумбой, балконом имеет площадь 30м²; это универсальное открытое пространство, состоящее из большой спальни и гостиной с двуспальным диваном-кроватью. </p>
+							<p>2Оснащен двумя одноместными кроватями, тумбой, балконом имеет площадь 30м²; это универсальное открытое пространство, состоящее из большой спальни и гостиной с двуспальным диваном-кроватью. </p>
+							<p>3Оснащен двумя одноместными кроватями, тумбой, балконом имеет площадь 30м²; это универсальное открытое пространство, состоящее из большой спальни и гостиной с двуспальным диваном-кроватью. </p>
+						</div>
+					</div>
+					
+					<div class="terms_container">
+						<table class="terms alone">
+							<tr>
+								<td>
+									<p class="bold">Цена за сутки: <span class="right">500 руб.</span> </p>
+									<p class="bold">Завтрак: <span class="right">200 руб.</span></p>
+								</td>
+							</tr>
+						</table>
+					</div>
+					
+					<table class="cost">
+						<tr>
+							<td><h5>Общая цена:</h5></td>
+							<td>
+								<span>скидка 20%</span>
+								<span class="sale">3000 руб.</span>
+							</td>
+							<td>
+								<p>2400 <span>руб.</span></p>
+							</td>
+						</tr>
+					</table>
+					
+					<button onclick="document.location = 'tours_confirm.html';">Забронировать</button>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+			
+
+			<div class="result_container ident2">
+				<div class="left_block">
+					<img class="percent" src="img/percent.png" alt="" />
+					<a href="#"><img class="photo_trigger one" data-index="0" src="img/photo_trigger.png" alt="" /></a>
+					
+					<img class="main_photo" data-index="0" src="img/results/1.jpg" alt="" />
+					
+		 <!-- Swiper -->
+    	<div class="swiper-container">
+        	<div class="swiper-wrapper">
+        		<div class="swiper-slide" data-index="1" style="background-image: url('img/results/2.jpg');"></div>        		
+        		<div class="swiper-slide" data-index="2" style="background-image: url('img/results/3.jpg');"></div>
+        		<div class="swiper-slide" data-index="3" style="background-image: url('img/results/4.jpg');"></div>
+        		<div class="swiper-slide" data-index="4" style="background-image: url('img/results/5.jpg');"></div>        		
+        		<div class="swiper-slide" data-index="5" style="background-image: url('img/results/6.jpg');"></div>			
+        	</div>
+        	
+        	<!-- Add Arrows -->
+        	<div class="swiper-button-next swiper-button-white"></div>
+        	<div class="swiper-button-prev swiper-button-white"></div>
+    	</div>					
+
+    	<!-- Initialize Swiper -->
+    	<script>
+    		var swiper = new Swiper('.ident2 .swiper-container', {
+    			nextButton: '.ident2 .swiper-button-next',
+    	        prevButton: '.ident2 .swiper-button-prev',
+        		slidesPerView: 3,
+        		paginationClickable: true,
+        		spaceBetween: 2
+    		});
+    	</script>
+        			
+					<script type="text/javascript">
+  						$(document).ready(function() {
+  							
+  							$('body').on('click', '.ident2 .photo_trigger, .ident2 .swiper-slide, .ident2 .main_photo', function() {
+  								var index = $(this).attr('data-index');
+  								
+  								$(this).lightGallery({
+            						dynamic:true,
+            						html:true,
+            						mobileSrc:true,
+            						thumbnail: false,
+            						index: index,
+            						dynamicEl:[
+										{"src":"img/results/1_big.jpg"},                       
+                						{"src":"img/results/2_big.jpg"},
+                						{"src":"img/results/3_big.jpg"},
+                						{"src":"img/results/4_big.jpg"},
+                						{"src":"img/results/5_big.jpg"},
+                						{"src":"img/results/6_big.jpg"},
+            						]
+        						});	
+        
+        						return false;
+  							 });
+  						});
+					</script>        			
+					
+					<div class="clear"></div>
+					
+					<table>
+						<tr>
+							<td>
+								<span class="bold">Заезд</span>
+								<span>Понедельник</span>
+								<span>19:00</span>
+							</td>
+							
+							<td>
+								<span class="bold">Выезд</span>
+								<span>Четверг</span>
+								<span>17:00</span>
+							</td>
+						</tr>
+						
+						<tr>
+							<td colspan="2"><span>Длительность проживания: 3 ночи</span></td>
+						</tr>
+					</table>
+					
+					<ul class="icons">
+						
+						<li><a href="#" aria-label="Кол-во человек" class="hint--bottom"><img src="img/icons/icon1.png" alt="" /> <span>2</span></a></li>
+						<li><a href="#" aria-label="Спальные метса" class="hint--bottom"><img src="img/icons/icon2.png" alt="" /> <span>1</span></a></li>
+						<li><a href="#" aria-label="Телевизор" class="hint--bottom"><img src="img/icons/icon3.png" alt="" /></a></li>
+						<li><a href="#" aria-label="Горы" class="hint--bottom"><img src="img/icons/icon4.png" alt="" /></a></li>
+						<li><a href="#" aria-label="Шумный" class="hint--bottom"><img src="img/icons/icon5.png" alt="" /></a></li>
+					</ul>
+				</div>
+				
+				<div class="right_block">
+					<h4>Эконом <span>[2 этаж | AYS Hostel - Комната в блоке 2 места]</span></h4>
+					<div class="text_content">
+						<ul class="parts">
+							<li><a href="#">О туре</a></li>
+							<li class="active"><a href="#">О номере</a></li>
+							<li><a href="#">О гостинице</a></li>
+							<li style="float: right;"> <a href="#"><img class="content_href open" src="img/down_arrow_gray.png" alt="" /></a> </li>
+						</ul>
+						
+						<div class="parts_content">
+							<p>1Оснащен двумя одноместными кроватями, тумбой, балконом имеет площадь 30м²; это универсальное открытое пространство, состоящее из большой спальни и гостиной с двуспальным диваном-кроватью. </p>
+							<p>2Оснащен двумя одноместными кроватями, тумбой, балконом имеет площадь 30м²; это универсальное открытое пространство, состоящее из большой спальни и гостиной с двуспальным диваном-кроватью. </p>
+							<p>3Оснащен двумя одноместными кроватями, тумбой, балконом имеет площадь 30м²; это универсальное открытое пространство, состоящее из большой спальни и гостиной с двуспальным диваном-кроватью. </p>
+						</div>
+					</div>
+					
+					<div class="terms_container">
+						<table class="terms alone">
+							<tr>
+								<td>
+									<p class="bold">Цена за сутки: <span class="right">500 руб.</span> </p>
+									<p class="bold">Завтрак: <span class="right">200 руб.</span></p>
+								</td>
+							</tr>
+						</table>
+					</div>
+					
+					<table class="cost">
+						<tr>
+							<td><h5>Общая цена:</h5></td>
+							<td>
+								<span>скидка 20%</span>
+								<span class="sale">3000 руб.</span>
+							</td>
+							<td>
+								<p>2400 <span>руб.</span></p>
+							</td>
+						</tr>
+					</table>
+					
+					<button onclick="document.location = 'tours_confirm.html';">Забронировать</button>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+			
+			
+		</div>
+		
+		<div class="clear"></div>
+	</section>
+</div>
+
+	</div>
+	
+	<div class="wrapper footer">
+		<footer>
+			<div class="row">
+				<div class="container">
+					<div class="footer_block">
+						<a href="#">Склоны</a>
+						<a href="#">Гостиницы</a>
+						<a href="#">Туры</a>
+						<a href="#">Мероприятия</a>
+					</div>
+			
+					<div class="footer_block">
+						<a href="#">Забронировать</a>
+						<a href="#">Условия бронирования</a>
+						<a href="#">Варианты Оплаты</a>
+						<a href="#">Договор оферты</a>
+					</div>
+			
+					<div class="footer_block">
+						<span><span>8-800-500-04-89</span> (Россия)</span>
+						<span><span>8-383-383-00-77</span> (Новосибирск)</span>
+						<span>Офис в Новосибирске:</span>
+						<span>ул. Советская 10, офис 205</span>
+					</div>
+			
+					<div class="footer_block">
+						<span>Присоединяйтесь:</span>
+					
+						<ul class="socials">
+							<li><a href="#"><img src="img/vk_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/fb_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/tw_footer.png" alt="" /></a></li>
+							<li><a href="#"><img src="img/rb_footer.png" alt="" /></a></li>
+						</ul>
+					
+						<div class="clear"></div>
+					</div>
+			
+					<div class="footer_block">
+						<img class="payanyway" src="img/payanyway.png" alt="" /> <br>
+						<img src="img/mastercard.png" alt="" />
+						<img src="img/visa.png" alt="" />
+					</div>
+			
+					<div class="clear"></div>			
+				</div>
+			</div>
+		
+			<div class="last_row">
+				<p>Все права защищены. © AYS hotels 2016.</p>
+			</div>
+		</footer>
+	</div>	
+</div>
+
+</body>
+</html>
